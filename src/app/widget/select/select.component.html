@@ -1,0 +1,30 @@
+<div class="stt-select" [ngClass]="{disabled: disabled}" (sttClickOutside)="clickOutsideEvent($event)">
+  <span class="stt-select__icon" *ngIf="!multiple" [ngClass]="{active: showSelectOptions && selectOptions.length}" (click)="clickEvent($event)"></span>
+
+  <span class="form-control stt-select__item" *ngIf="!multiple && selectedList.length" (click)="clickEvent($event)">
+    <span>{{(translatePrefix ? (translatePrefix + '.' + selectedList[0][displayField] | uppercase) : selectedList[0][displayField]) | translate}}</span>
+    <button type="button" class="btn btn-link close" tabindex="0" [disabled]="disabled"
+      (click)="removeSelect()" (keyup.enter)="removeSelect()" *ngIf="allowClear">&times;</button>
+  </span>
+  <span *ngIf="multiple && selectedList.length">
+    <span class="stt-select__item--multiple" *ngFor="let selected of selectedList; let idx = index">
+      <span>{{(translatePrefix ? (translatePrefix + '.' + selected[displayField] | uppercase) : selected[displayField]) | translate}}</span>
+      <button type="button" class="btn btn-link close" tabindex="0" [disabled]="disabled"
+        (click)="removeSelect(idx)" (keyup.enter)="removeSelect(idx)">&times;</button>
+    </span>
+  </span>
+
+  <div *ngIf="(multiple && !disabled) || (!multiple && !selectedList.length)">
+    <input type="text" class="form-control" sttTrim [disabled]="disabled"
+      [placeholder]="('FORM.PLEASE_CHOOSE' | translate) + (placeholder | translate)"
+      (input)="inputEvent($event)" (keydown)="inputEvent($event)" (click)="clickEvent($event)" (focus)="clickEvent($event)" #inputField>
+  </div>
+
+  <ul class="stt-select__list" *ngIf="showSelectOptions && selectOptions.length">
+    <li class="stt-select__option" *ngFor="let option of selectOptions">
+      <a [ngClass]="{active: isSelected(option)}" href="javascript:void(0)" (click)="onSelect(option)">
+        {{(translatePrefix ? (translatePrefix + '.' + option[displayField] | uppercase) : option[displayField]) | translate}}
+      </a>
+    </li>
+  </ul>
+</div>

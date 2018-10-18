@@ -1,0 +1,120 @@
+// using mobile first method (IE8,7 requires respond.js polyfill https://github.com/scottjehl/Respond)
+table {
+  padding: 0 2em;
+  margin: 1em 0;
+  min-width: 20rem;
+
+  tr {
+    .colspan--full {
+      &:before {
+        display: none;
+      }
+      display: table-cell;
+    }
+  }
+
+  th {
+    display: none;
+  }
+
+  td {
+    display: flex;
+    // justify-content: space-between;
+
+    &:before {
+      width: 40%;
+      content: attr(data-th);
+      font-weight: bold;
+      text-align: left;
+      display: flex;
+
+      @media (min-width: $stt-grid-breakpoint-lg) {
+        display: none;
+      }
+    }
+  }
+
+  th, td {
+    text-align: center;
+    @media (min-width: $stt-grid-breakpoint-lg) {
+      min-width: 3rem;
+      display: table-cell;
+      padding: .25rem .5rem;
+    }
+  }
+}
+
+.table-striped {
+  tr, thead th, tbody td {
+    border: 1px solid transparent;
+    vertical-align: middle;
+  }
+  thead th {
+    background-color: $stt-table-bg;
+  }
+  tbody {
+    tr {
+      &:nth-of-type(odd) {
+        background-color: transparent;
+      }
+      &:nth-of-type(even) {
+        background-color: $stt-table-bg;
+      }
+      @media (max-width: $stt-grid-breakpoint-lg - 1) {
+        &:nth-of-type(odd) {
+          background-color: $stt-table-bg;
+        }
+        &:nth-of-type(even) {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+.table-classified {
+  min-width: auto;
+  tr, thead th, tbody td {
+    border: 1px solid transparent;
+    font-weight: normal;
+    text-align: left;
+    span {
+      padding: 0.75em;
+    }
+  }
+  thead th {
+    border-bottom: 1px solid $stt-table-border;
+    background-color: $stt-table-bg;
+  }
+  tbody tr {
+    background-color: transparent;
+    &:first-child {
+      border-top: 1px solid $stt-table-border;
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid $stt-table-border;
+    }
+    &:nth-of-type(odd), &:nth-of-type(even) {
+      background-color: transparent;
+    }
+    td {
+      flex-wrap: wrap;
+      &:first-child {
+        white-space:nowrap;
+        @media (max-width: $stt-grid-breakpoint-lg - 1) {
+          padding-bottom: 0;
+          span {
+            padding-bottom: 0;
+          }
+        }
+      }
+      &:not(:last-child) {
+        border-right: 1px solid $stt-table-border;
+        border-bottom: 1px solid $stt-table-border;
+      }
+      &:before {
+        display: none;
+      }
+    }
+  }
+}

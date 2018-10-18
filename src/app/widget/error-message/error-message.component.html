@@ -1,0 +1,18 @@
+<div *ngIf="showMessage.required" >
+  {{'ERROR_MESSAGE.REQUIRED' | translate}}
+</div>
+<small *ngIf="showMessage.email" class="form-control-feedback">
+  {{'ERROR_MESSAGE.EMAIL' | translate}}
+</small>
+<small *ngIf="showMessage.minlength" class="form-control-feedback">
+  {{'ERROR_MESSAGE.MINLENGTH' | translate: {minlength: minlength} }}
+</small>
+<small *ngIf="showMessage.maxlength" class="form-control-feedback">
+  {{'ERROR_MESSAGE.MAXLENGTH' | translate: {maxlength: maxlength} }}
+</small>
+<small *ngIf="showMessage.pattern" class="form-control-feedback">
+  {{'ERROR_MESSAGE.PATTERN' + (pattern ? '_' + pattern : '') | translate: {symbol: symbol} }}
+</small>
+<small *ngIf="showMessage.sttCompareTo" class="form-control-feedback">
+  {{'ERROR_MESSAGE.COMPARETO' | translate}}
+</small>

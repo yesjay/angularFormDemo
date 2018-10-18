@@ -1,0 +1,44 @@
+<!-- <app-form-group-test></app-form-group-test>
+<app-try-validationlink></app-try-validationlink> -->
+<!-- <div class="container">
+  <h1>Reactive Forms</h1>
+  <app-hero-list></app-hero-list>
+</div> -->
+<!-- <div>
+  <h2>Job Application for Heroes</h2>
+  <app-dynamic-form [questions]="questions"></app-dynamic-form>
+</div> -->
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Reactive form</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <app-reactive-form-prac></app-reactive-form-prac>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Template-driven form</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <app-template-driven-prac></app-template-driven-prac>
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Dynamic form by Reactive form</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <app-dynamic-form-prac [questions]="questions"></app-dynamic-form-prac>
+  </mat-card-content>
+</mat-card>
+<span>{{'MENU.USER' | translate}}</span>

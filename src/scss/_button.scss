@@ -1,0 +1,134 @@
+@mixin _button-variant($color, $background, $border) {
+  color: $color;
+  background-color: $background;
+  border-color: $border;
+  &:hover {
+    color: $color;
+    background-color: darken($background, 12%);
+    border-color: darken($border, 12%);
+  }
+  &.focus, &:focus {
+    color: $color;
+    background-color: darken($background, 20%);
+    border-color: darken($border, 20%);
+  }
+  &.disabled, &:disabled, &:disabled:hover {
+    background-color: $stt-btn-bg-disabled;
+  }
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: $color;
+    background-color: darken($background, 20%);
+    border-color: darken($border, 20%);
+  }
+}
+
+@mixin _button-outline-variant($color, $color-hover: $stt-btn-color) {
+  color: $color;
+  background-color: transparent;
+  border-color: $color;
+  &:hover {
+    color: $color-hover;
+    background-color: $color;
+    border-color: $color;
+  }
+  &.focus, &:focus {
+    color: $color-hover;
+    background-color: darken($color, 12%);
+    border-color: darken($color, 12%);
+  }
+  &.disabled, &:disabled, &:disabled:hover {
+    background-color: transparent;
+  }
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: $color-hover;
+    background-color: darken($color, 12%);
+    border-color: darken($color, 12%);
+  }
+}
+
+.btn {
+  cursor: pointer;
+  &.focus, &:focus {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  &.disabled, &:disabled, &:disabled:hover {
+    color: $stt-btn-color-disabled;
+    border-color: $stt-btn-bg-disabled;
+    cursor: not-allowed;
+  }
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    &:focus {
+      box-shadow: 0 0 0 0 transparent;
+    }
+  }
+  @include _button-variant($stt-btn-default, transparent, transparent);
+}
+
+.btn-primary {
+  @include _button-variant($stt-btn-color, $stt-btn-primary, $stt-btn-primary);
+}
+.btn-secondary {
+  @include _button-variant($stt-btn-color, $stt-btn-secondary, $stt-btn-secondary);
+}
+.btn-info {
+  @include _button-variant($stt-btn-color, $stt-btn-info, $stt-btn-info);
+}
+.btn-success {
+  @include _button-variant($stt-btn-color, $stt-btn-success, $stt-btn-success);
+}
+.btn-warning {
+  @include _button-variant($stt-btn-color, $stt-btn-warning, $stt-btn-warning);
+}
+.btn-danger {
+  @include _button-variant($stt-btn-color, $stt-btn-danger, $stt-btn-danger);
+}
+.btn-dark {
+  @include _button-variant($stt-btn-color, $stt-btn-dark, $stt-btn-dark);
+}
+
+.btn-outline-primary {
+  @include _button-outline-variant($stt-btn-primary);
+}
+.btn-outline-secondary {
+  @include _button-outline-variant($stt-btn-secondary);
+}
+.btn-outline-info {
+  @include _button-outline-variant($stt-btn-info);
+}
+.btn-outline-success {
+  @include _button-outline-variant($stt-btn-success);
+}
+.btn-outline-warning {
+  @include _button-outline-variant($stt-btn-warning);
+}
+.btn-outline-danger {
+  @include _button-outline-variant($stt-btn-danger);
+}
+.btn-outline-dark {
+  @include _button-outline-variant($stt-btn-dark);
+}
+
+.btn-link {
+  color: $stt-btn-link;
+  text-decoration: none;
+  &:hover {
+    color: darken($stt-btn-link, 12%);
+    text-decoration: none;
+  }
+  &:focus,
+  &:active {
+    color: darken($stt-btn-link, 20%);
+    text-decoration: none;
+  }
+  &:disabled, &:disabled:hover {
+    color: $stt-btn-color-disabled;
+    background-color: $stt-btn-bg-disabled;
+    border-color: $stt-btn-bg-disabled;
+  }
+}

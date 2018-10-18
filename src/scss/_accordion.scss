@@ -1,0 +1,102 @@
+.stt-accordion--default, .stt-accordion--arrow {
+  .card {
+    margin: 0.5rem 0;
+    border-color: $stt-accordion-border;
+    .card-header {
+      padding: 0;
+      border-bottom: 0 solid transparent;
+      a {
+        display: flex;
+        color: $stt-accordion-color;
+        &:hover, &:focus {
+          color: darken($stt-accordion-color, 18%);
+          text-decoration: none;
+        }
+        &:before {
+          @extend .icon;
+          display: inline-block;
+          color: $stt-accordion-color;
+          position: absolute;
+        }
+        &[aria-expanded="true"] {
+          background-color: $stt-accordion-bg-active;
+        }
+        &[aria-expanded="false"] {
+          background-color: $stt-accordion-bg;
+        }
+        &[aria-disabled="true"] {
+          cursor: not-allowed;
+          &:hover, &:focus {
+            color: $stt-brand-secondary !important;
+          }
+        }
+      }
+    }
+    .card-body {
+      color: $stt-accordion-color;
+      background-color: $stt-accordion-bg;
+      &.show {
+        background-color: $stt-accordion-bg-active;
+      }
+    }
+  }
+}
+
+.stt-accordion--default {
+  .card {
+    .card-header {
+      a {
+        padding: 0.75rem 1.25rem .75rem 3.75rem;
+        &:before {
+          @extend .icon-minus:before;
+          font-size: 1.3rem;
+          left: 1.5rem;
+        }
+      }
+      &.active {
+        a:before {
+          @extend .icon-plus:before;
+        }
+      }
+    }
+    .card-body {
+      padding: 0.25rem 1.75rem 1.25rem 3.75rem;
+    }
+  }
+}
+
+.stt-accordion--arrow {
+  .card {
+    .card-header {
+      a {
+        padding: 0.75rem 1.25rem .75rem 2.75rem;
+        &:before {
+          @extend .icon-caret-down:before;
+          right: 1.5rem;
+        }
+        &:after {
+          @extend .icon;
+          @extend .icon-circle:before;
+          color: $stt-accordion-border;
+          font-size: 0.5rem;
+          position: absolute;
+          top: 1rem;
+          left: 1.25rem;
+        }
+      }
+      &.active {
+        a:before {
+          @extend .icon-caret-up:before;
+        }
+      }
+      &.card-danger {
+        a:after {
+          color: $stt-brand-danger;
+        }
+      }
+    }
+    .card-body {
+      padding: 0.25rem 1.75rem 1.25rem 2.75rem;
+    }
+  }
+}

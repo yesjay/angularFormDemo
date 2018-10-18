@@ -1,0 +1,171 @@
+// Variables Setting Contents
+//
+// Images
+// Colors
+// Semantic Color Theme
+// Web Background
+// RWD Width
+// Navbar
+// Sidebar
+// Form
+// Select
+// Checkbox/Radio
+// Button
+// Table
+// Pagination
+// Accordion
+// Tabs
+
+/* Images Setting */
+$stt-logo-path: 'assets/images/logo.svg';
+$stt-icon-path: 'assets/images/icon.svg';
+$stt-bg-path: 'assets/images/bg.svg';
+
+/* Colors Setting */
+$stt-white:  #fff !default;
+$stt-black:  #000 !default;
+$stt-red:    #bf3665 !default;
+$stt-orange: #e65041 !default;
+$stt-yellow: #f6ab00 !default;
+$stt-green:  #63af31 !default;
+$stt-blue:   #318bc4 !default;
+$stt-teal:   #139ba1 !default;
+$stt-purple: #5547a4 !default;
+
+$stt-blue-gray-1: #374355 !default;
+$stt-blue-gray-2: #3d4d65 !default;
+$stt-blue-gray-3: #566b83 !default;
+$stt-blue-gray-4: #8493a8 !default;
+$stt-blue-gray-5: #adb9ca !default;
+$stt-blue-gray-6: #cad3df !default;
+$stt-blue-gray-7: #eceff4 !default;
+
+$stt-black-gray-1: #222222 !default;
+$stt-black-gray-2: #404040 !default;
+$stt-black-gray-3: #656565 !default;
+$stt-black-gray-4: #9e9e9e !default;
+$stt-black-gray-5: #c9c9c9 !default;
+$stt-black-gray-6: #dcdcdc !default;
+$stt-black-gray-7: #ebebeb !default;
+
+$stt-light-gray-1: #f7f9fb !default;
+$stt-light-gray-2: #f2f4f7 !default;
+$stt-light-gray-3: #e0e5ee !default;
+
+/* Semantic Color Theme */
+$stt-brand-primary: $stt-blue !default;
+$stt-brand-success: $stt-green !default;
+$stt-brand-info: $stt-teal !default;
+$stt-brand-warning: $stt-yellow !default;
+$stt-brand-danger: $stt-orange !default;
+$stt-brand-secondary: $stt-black-gray-4 !default;
+$stt-brand-light: $stt-light-gray-1 !default;
+$stt-brand-dark: $stt-black-gray-2 !default;
+
+/* RWD Width Setting */
+$stt-grid-breakpoint-lg: 992px;
+
+/* Web Background Setting */
+$stt-body-bg: $stt-light-gray-1;
+
+/* Navbar Setting */
+$stt-navbar-color-default: $stt-blue-gray-1;
+$stt-navbar-color-primary: $stt-white;
+$stt-navbar-bg-default: $stt-white;
+$stt-navbar-bg-primary: $stt-brand-primary;
+$stt-navbar-munu-border: $stt-blue-gray-6;
+
+/* Sidebar Setting */
+$stt-sidebar-color: $stt-blue-gray-1;
+$stt-sidebar-bg: $stt-light-gray-3;
+$stt-sidebar-border: $stt-brand-primary;
+
+/* Form Setting */
+$stt-label-color: $stt-blue-gray-1;
+$stt-input-color: $stt-blue-gray-1;
+$stt-input-error: $stt-brand-danger;
+$stt-input-placeholder-color: $stt-black-gray-5;
+$stt-input-border: $stt-black-gray-5;
+$stt-input-border-focus: $stt-black-gray-4;
+
+/* Multi-Step Setting */
+$stt-multi-step-color: $stt-white;
+$stt-multi-step-bg: $stt-black-gray-6;
+$stt-multi-step-bg-active: $stt-brand-primary;
+$stt-multi-step-bg-complete: $stt-black-gray-4;
+
+/* Select Setting */
+$stt-select-color: $stt-black-gray-2;
+$stt-select-bg: $stt-white;
+$stt-select-bg-hover: rgba($stt-brand-primary, 0.1);
+$stt-select-border: $stt-black-gray-5;
+$stt-select-arrow: $stt-blue-gray-2;
+
+/* Checkbox/Radio Setting */
+$stt-check: $stt-brand-primary;
+$stt-check-border: $stt-black-gray-5;
+$stt-check-disabled: $stt-black-gray-5;
+$stt-check-disabled-checked: $stt-blue-gray-4;
+
+/* Button Setting */
+$stt-btn-default: $stt-blue-gray-1;
+$stt-btn-secondary: $stt-brand-secondary;
+$stt-btn-primary: $stt-brand-primary;
+$stt-btn-info: $stt-brand-info;
+$stt-btn-success: $stt-brand-success;
+$stt-btn-warning: $stt-brand-warning;
+$stt-btn-danger: $stt-brand-danger;
+$stt-btn-link: $stt-brand-primary;
+$stt-btn-light: $stt-light-gray-3;
+$stt-btn-dark: $stt-black-gray-2;
+
+$stt-btn-color: $stt-white;
+$stt-btn-color-disabled: $stt-black-gray-4;
+$stt-btn-bg-disabled: $stt-black-gray-7;
+$stt-btn-border-disabled: $stt-black-gray-6;
+
+/* Table Setting */
+$stt-table-bg: $stt-light-gray-2;
+$stt-table-border: $stt-black-gray-6;
+
+/* Pagination Setting */
+$stt-pagination-color: $stt-brand-primary;
+$stt-pagination-color-active: $stt-white;
+$stt-pagination-bg: $stt-white;
+$stt-pagination-bg-hover: rgba($stt-brand-primary, 0.1);
+$stt-pagination-bg-active: $stt-brand-primary;
+$stt-pagination-disabled: $stt-black-gray-5;
+
+/* Accordion Setting */
+$stt-accordion-color: $stt-blue-gray-1;
+$stt-accordion-bg: $stt-light-gray-2;
+$stt-accordion-bg-active: $stt-white;
+$stt-accordion-border: $stt-blue-gray-5;
+
+/* Tabs Setting */
+$stt-tabs-color-default: $stt-black-gray-2;
+$stt-tabs-color-active-default: $stt-black-gray-2;
+$stt-tabs-bg-default: $stt-black-gray-7;
+$stt-tabs-border-default: $stt-brand-primary;
+
+$stt-tabs-color-reverse: $stt-white;
+$stt-tabs-color-active-reverse: $stt-blue-gray-2;
+$stt-tabs-bg-reverse: $stt-brand-primary;
+$stt-tabs-border-reverse: $stt-brand-danger;
+
+$stt-tabs-content-color: $stt-blue-gray-2;
+$stt-tabs-content-bg: $stt-white;
+
+/* File Upload Setting */
+$stt-file-upload-color: $stt-blue-gray-4;
+$stt-file-upload-bg: $stt-blue-gray-6;
+$stt-file-upload-border: $stt-blue-gray-6;
+$stt-file-upload-bg-active: $stt-white;
+
+/* Permission Setting */
+$stt-permission-color-checked: $stt-white;
+$stt-permission-color-disabled: $stt-black-gray-4;
+$stt-permission-bg-checked: $stt-brand-primary;
+$stt-permission-bg-disabled: $stt-black-gray-7;
+$stt-permission-bg-disabled-checked: darken($stt-brand-primary, 15%);
+$stt-permission-border: $stt-black-gray-5;

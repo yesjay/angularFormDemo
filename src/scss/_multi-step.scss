@@ -1,0 +1,30 @@
+// multi-step form
+.stt-multi-step {
+  width: 3rem;
+  height: 3rem;
+  margin: 1rem;
+  display: inline-block;
+  color: $stt-multi-step-color;
+  font-size: 1.5rem;
+  line-height: 2;
+  text-align: center;
+  background-color: $stt-multi-step-bg;
+  border-radius: 50%;
+  position: relative;
+  &.active {
+    background-color: $stt-multi-step-bg-active;
+  }
+  &.complete {
+    background-color: $stt-multi-step-bg-complete;
+  }
+  &:after {
+    content: attr(data-tilte);
+    width: 100%;
+    display: inline-block;
+    color: $stt-black-gray-1;
+    font-size: 0.5rem;
+    position: absolute;
+    left: 0;
+    bottom: -1.5rem;
+  }
+}

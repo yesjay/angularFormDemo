@@ -1,0 +1,49 @@
+<form [formGroup]="dataForm" class="example-form" (ngSubmit)="onSubmit()">
+  <mat-form-field class="example-full-width">
+    <input matInput formControlName="name">
+    <mat-placeholder>{{'FORM.PLEASE_INPUT' | translate}}{{'FORM.NAME' | translate}}</mat-placeholder>
+    <mat-error *ngIf="dataForm.invalid && dataForm.touched">
+      <stt-error-message maxlength="20" [errors]="dataForm.get('name').errors"></stt-error-message>
+      <!-- <div *ngIf="dataForm.hasError('required', 'name')">
+        姓名為 <strong>必填</strong>
+      </div> -->
+      
+      <div *ngIf="dataForm.hasError('forbiddenName', 'name')">
+        姓名不可包含 <strong>bob</strong>
+      </div>
+        
+    </mat-error>
+    
+  </mat-form-field>
+  
+  <mat-radio-group formControlName="gender" class="example-form">
+    <mat-radio-button value="man">男</mat-radio-button>
+    <mat-radio-button value="female">女</mat-radio-button>
+  </mat-radio-group>
+  <mat-form-field class="example-form">
+    <input matInput [matDatepicker]="picker" placeholder="請選擇生日" formControlName="birthday">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="請輸入電話" formControlName="homePhone">
+  </mat-form-field>
+  <div formGroupName="physicalConditions">
+    <h4>身體項目</h4>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="請輸入體重" formControlName="weight">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="請輸入身高" formControlName="height">
+    </mat-form-field>
+  </div>
+  <button mat-raised-button (click)="clearData()">取消</button>
+  <button mat-raised-button color="primary" type="submit">儲存</button>
+  <button mat-raised-button color="accent" type="button" (click)="getValue(dataForm)">log</button>
+</form>
+<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+  <mat-button-toggle value="clear" (click)="clearData()">清空</mat-button-toggle>
+  <mat-button-toggle value="1" (click)="getData(1)">user1</mat-button-toggle>
+  <mat-button-toggle value="2" (click)="getData(2)">user2</mat-button-toggle>
+</mat-button-toggle-group>
+

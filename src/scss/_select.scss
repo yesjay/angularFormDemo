@@ -1,0 +1,141 @@
+.form-group, .form-group--default, .form-group--underscore, .form-group--table {
+  .stt-select {
+    max-width: 100%;
+    min-width: 14rem;
+    position: relative;
+    border: 1px solid $stt-select-border;
+    &.disabled {
+      background-color: rgba($stt-select-border, 0.2);
+      cursor: not-allowed;
+    }
+    .stt-select__icon {
+      @extend .icon;
+      position: absolute;
+      top: 0.5rem;
+      right: 0.75rem;
+      color: $stt-select-arrow;
+    }
+    .form-control {
+      padding-right: 2rem;
+      border-color: transparent;
+      outline: transparent;
+    }
+    .stt-select__item {
+      min-width: 100%;
+      color: $stt-select-color;
+      white-space:nowrap;
+      .close {
+        margin-right: 0.5rem;
+        color: $stt-select-color;
+      }
+    }
+    .stt-select__item--multiple {
+      margin: 0.25rem;
+      padding: 0.25rem 0.5rem;
+      display: inline-block;
+      border-radius: 0.2rem;
+      border: 1px solid $stt-select-border;
+      background-color: transparent;
+      font-size: 0.875rem;
+      color: $stt-select-color;
+      white-space:nowrap;
+      .close {
+        margin: 0.2rem 0 0 0.25rem;
+        font-size: 1rem;
+        color: $stt-select-color;
+      }
+    }
+    .stt-select__list {
+      width: auto;
+      min-width: 100%;
+      height: auto;
+      max-height: 12rem;
+      padding: 0.5rem 0;
+      background-color: $stt-select-bg;
+      box-shadow: 0 0.1rem 0.5rem $stt-select-border;
+      border: 1px solid $stt-select-border;
+      overflow-x: hidden;
+      list-style-type: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      .stt-select__option a {
+        display: block;
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        color: $stt-select-color;
+        white-space:nowrap;
+        text-decoration: none;
+        &.active, &.active:hover, &.active:focus {
+          outline: none;
+          background-color: $stt-select-bg-hover;
+        }
+        &:hover, &:focus {
+          outline: none;
+          background-color: lighten($stt-select-bg-hover, 25%);
+        }
+      }
+    }
+  }
+}
+
+.form-group, .form-group--default {
+  .stt-select {
+    border-radius: 5px;
+    .stt-select__icon {
+      &:before {
+        @extend .icon-caret-down:before;
+      }
+      &.active:before {
+        @extend .icon-caret-up:before;
+      }
+    }
+    .stt-select__list {
+      border-radius: 5px;
+      margin-top: 0.2rem;
+    }
+  }
+}
+
+.form-group--underscore {
+  .stt-select {
+    border-color: transparent transparent $stt-select-border;
+    .stt-select__icon {
+      &:before {
+        @extend .icon-angle-down:before;
+      }
+      &.active:before {
+        @extend .icon-angle-up:before;
+      }
+    }
+  }
+}
+
+.form-group--table {
+  display: inline-block;
+  margin: 0;
+  .stt-select {
+    min-width: auto;
+    border-radius: 0;
+    .stt-select__icon {
+      top: 0.5rem;
+      font-size: 0.8rem;
+    }
+    .stt-select__item {
+      padding: 0.25rem 1.75rem 0.25rem 0.75rem;
+      background-color: rgba($stt-select-bg, 0.1);
+      font-size: 0.8rem;
+    }
+    .stt-select__list {
+      border-radius: 0;
+      padding: 0;
+    }
+  }
+}
+
+.form-group--horizontal {
+  .stt-select {
+    min-width: 7rem !important;
+  }
+}

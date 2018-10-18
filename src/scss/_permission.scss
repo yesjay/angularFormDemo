@@ -1,0 +1,48 @@
+.stt-permission {
+  min-width: 8rem;
+  margin: 0.5rem;
+  padding: 0;
+  text-align: center;
+  border-radius: 1rem;
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    + span {
+      display: block;
+      padding: 0.3rem 1rem;
+      border-radius: 1rem;
+      border: 1px solid $stt-permission-border;
+      white-space: nowrap;
+    }
+    &:hover {
+      + span {
+        box-shadow: 1px 1px 1px lighten($stt-permission-border, 10%);
+      }
+      &:checked + span {
+        box-shadow: 1px 1px 1px lighten($stt-permission-bg-checked, 20%); 
+      }
+      &:disabled + span {
+        box-shadow: none; 
+      }
+    }
+    &:checked + span {
+      color: $stt-permission-color-checked;
+      background-color: $stt-permission-bg-checked;
+      border-color: $stt-permission-bg-checked;
+    }
+    &:disabled {
+      + span {
+        color: $stt-permission-color-disabled;
+        background-color: $stt-permission-bg-disabled;
+        border-color: $stt-permission-bg-disabled;
+        cursor: not-allowed;
+      }
+      &:checked + span {
+        color: $stt-permission-color-checked;
+        background-color: $stt-permission-bg-disabled-checked;
+        border-color: $stt-permission-bg-disabled-checked;
+        cursor: not-allowed;
+      }
+    }
+  }
+}

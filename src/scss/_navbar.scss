@@ -1,0 +1,131 @@
+.navbar {
+  padding: 0 1.5rem;
+  .navbar-toggler {
+    border-width: 0;
+    cursor: pointer;
+  }
+  .navbar-brand {
+    padding: 1rem 0;
+    font-size: 1rem;
+    align-self: center; 
+  }
+  .navbar-collapse {
+    .navbar-nav {
+      .nav-item{
+        outline: none;
+
+        .nav-link {
+          cursor: pointer;
+          padding: 1.2rem 1rem 0.8rem;
+          border-bottom: 4px solid transparent;
+        }
+      }
+    }
+  }
+}
+
+.navbar--default {
+  background-color: $stt-navbar-bg-default;
+  &.noLogging {
+    background-color: $stt-body-bg;
+    .navbar-brand {
+      opacity: 0;
+    }
+  }
+  .navbar-toggler {
+    .icon {
+      color: $stt-navbar-color-default;
+    }
+  }
+  .navbar-brand {
+    padding: 0.8rem 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 2;
+    color: $stt-navbar-color-default;
+    &:hover {
+      color: $stt-navbar-color-default;
+    }
+  }
+  .navbar__profile {
+    padding: 0 0.2rem;
+    line-height: 1.2;
+    font-size: 0.85rem;
+    small {
+      color: $stt-blue-gray-4;
+    }
+  }
+  .navbar__menu {
+    display: inline-block;
+    margin-top: auto;
+    margin-bottom: auto;
+    .navbar__icon {
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      background-color: transparent;
+      &:after {
+        display: none;
+      }
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    .dropdown-menu {
+      min-width: 15rem;
+      border-color: transparent;
+      box-shadow: 0 0.1rem 0.5rem $stt-navbar-munu-border;
+      .dropdown-item {
+        padding: 1rem 2.5rem;
+        color: $stt-navbar-color-default;
+        outline: none;
+        &:hover, &:focus, &:active {
+          color: $stt-navbar-color-default;
+          background-color: rgba($stt-navbar-munu-border, 0.2);
+        }
+        &  + .dropdown-item {
+          border-top: 1px solid $stt-navbar-munu-border;
+        }
+        .icon {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.navbar--primary {
+  background-color: $stt-navbar-bg-primary;
+  .navbar-toggler {
+    .icon {
+      color: $stt-navbar-color-primary;
+    }
+  }
+  .navbar-brand {
+    color: $stt-navbar-color-primary;
+    &:hover {
+      color: $stt-navbar-color-primary;
+    }
+    @media (max-width: $stt-grid-breakpoint-lg - 1) {
+      display: block;
+      text-align: center;
+    }
+  }
+  .navbar-collapse {
+    .navbar-nav {
+      .nav-item{
+        &.active {
+          .nav-link {
+            color: $stt-navbar-color-primary;
+            border-bottom-color: darken($stt-navbar-bg-primary, 15%);
+          }
+        }
+        .nav-link {
+          color: darken($stt-navbar-bg-primary, 28%);
+          &:hover, &:focus {
+            color: $stt-navbar-color-primary;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+.stt-sidebar {
+  // background-color: $stt-light-gray-1;
+  border-right: 2px solid $stt-sidebar-bg;
+  @media (min-width: $stt-grid-breakpoint-lg) {
+      display: block;
+  }
+  .list-group-item {
+    color: $stt-sidebar-color;
+    padding: 1.5rem 1.3rem;
+    border-radius: 0;
+    border-width: 0 3px 0;
+    border-color: transparent;
+    background-color: transparent;
+    &:focus {
+      outline: none;
+    }
+    &:hover {
+      background-color: rgba($stt-sidebar-bg, 0.5);
+    }
+    &.active {
+      background-color: $stt-sidebar-bg;
+      border-color: transparent $stt-sidebar-border transparent transparent;
+    }
+  }
+}

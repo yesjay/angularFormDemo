@@ -1,0 +1,40 @@
+<div [formGroup]="form">
+  
+  <div [ngSwitch]="question.controlType">
+
+    <mat-form-field class="example-full-width" *ngSwitchCase="'textbox'">
+      <input matInput [placeholder]="question.label" [value]="question.value || ''" 
+      [formControlName]="question.key"
+      [id]="question.key"
+      [type]="question.type"> 
+    </mat-form-field>
+
+    <mat-form-field *ngSwitchCase="'dropdown'">
+      <mat-select [placeholder]="question.label" [formControlName]="question.key">
+        <mat-option *ngFor="let opt of question.options" [value]="opt.key" [id]="question.key" >
+          {{ opt.value }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngSwitchCase="'datepicker'" class="example-form">
+      <input matInput [matDatepicker]="picker" [placeholder]="question.label" [formControlName]="question.key">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-radio-group *ngSwitchCase="'radio'" [formControlName]="question.key">
+      <mat-radio-button *ngFor="let opt of question.options" [value]="opt.key">{{ opt.value }}</mat-radio-button>
+    </mat-radio-group>
+
+    <div *ngSwitchCase="'formGroup'" [formGroupName]="question.key">
+      <h4>{{question.label}}</h4>
+      <mat-form-field *ngFor="let child of question.children" class="example-full-width">
+        <input matInput [placeholder]="child.label" [formControlName]="child.key" [value]="child.value">
+      </mat-form-field>
+    </div>
+
+  </div> 
+
+  <!-- <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div> -->
+</div>

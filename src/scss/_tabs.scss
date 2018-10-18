@@ -1,0 +1,98 @@
+.stt-tabs {
+  &[ng-reflect-orientation="vertical"] {
+    display: flex;
+  }
+  .nav-tabs {
+    .nav-item {
+      &.show .nav-link {
+        background-color: transparent;
+      }
+      .nav-link {
+        height: 100%;
+        padding: 0.75rem 2rem;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 0;
+        border-width: 5px 0 0;
+      }
+    }
+    .dropdown-toggle {
+      padding: 0;
+      &:after {
+        display: none;
+      }
+    }
+    + .tab-content {
+      background-color: $stt-tabs-content-bg;
+      .tab-pane {
+        padding: 0.5rem;
+      }
+    }
+    &.flex-column {
+      .nav-item {
+        .nav-link {
+          padding: 1rem 1.5rem;
+          text-align: right;
+          border-width: 0 4px 0 0;
+        }
+      }
+    }
+  }
+}
+
+.stt-tabs--default {
+  .nav-tabs {
+    background-color: $stt-tabs-bg-default;
+    border-color: transparent;
+    .nav-item {
+      .nav-link {
+        color: $stt-tabs-color-default;
+        border-color: transparent;
+        &.active {
+          color: $stt-tabs-color-active-default;
+          border-color: $stt-tabs-border-default transparent transparent;
+        }
+      }
+    }
+    &.flex-column {
+      background-color: transparent;
+      border-right: 2px solid rgba($stt-tabs-color-default, 0.2);
+      .nav-item {
+        .nav-link {
+          color: rgba($stt-tabs-color-default, 0.2);
+          &.active {
+            color: $stt-tabs-color-active-default;
+            border-color: transparent $stt-tabs-border-default transparent transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+.stt-tabs--reverse {
+  .nav-tabs {
+    background-color: $stt-tabs-bg-reverse;
+    border-color: transparent;
+    .nav-item {
+      .nav-link {
+        color: $stt-tabs-color-reverse;
+        border-color: transparent;
+        &.active {
+          color: $stt-tabs-color-active-reverse;
+          border-color: $stt-tabs-border-reverse transparent transparent;
+        }
+      }
+    }
+    &.flex-column {
+      .nav-item {
+        .nav-link {
+          &.active {
+            color: $stt-tabs-color-active-reverse;
+            border-color: transparent $stt-tabs-border-reverse transparent transparent;
+          }
+        }
+      }
+    }
+  }
+}

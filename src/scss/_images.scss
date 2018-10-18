@@ -1,0 +1,57 @@
+[class^="stt-image--"], [class*="stt-image--"] {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  display: inline-block;
+}
+
+.stt-image--logo {
+  width: 25rem;
+  height: 5rem;
+  @if variable-exists(stt-logo-path) {
+    background-image: url($stt-logo-path);
+  } @else {
+    display: none;
+  }
+}
+
+.stt-image--icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  @if variable-exists(stt-icon-path) {
+    background-image: url($stt-icon-path);
+  } @else {
+    display: none;
+  }
+}
+
+.stt-image--bg {
+  width: 100%;
+  height: 2rem;
+  background-repeat: repeat;
+  background-position: center bottom;
+  @if variable-exists(stt-bg-path) {
+    background-image: url($stt-bg-path);
+  } @else {
+    display: none;
+  }
+}
+
+.stt-background-image {
+  width: 100%;
+  padding-bottom: 100%;
+  background-color: $stt-file-upload-bg-active;
+  border: 1px solid $stt-file-upload-border;
+  position: relative;
+  overflow: hidden;
+  .stt-background-image__content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}

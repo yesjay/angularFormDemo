@@ -1,0 +1,22 @@
+{
+  "MENU": {
+    "USER": "使用者管理",
+    "QUERY": "查詢",
+    "CREATE": "新增"
+  },
+  "FORM": {
+    "PLEASE_INPUT": "請輸入",
+    "PLEASE_CHOICE": "請選擇",
+    "PLEASE_CHOOSE": "請選擇",
+    
+    "NAME": "姓名",
+    "BIRTHDAY": "生日",
+    "HOMEPHONE": "電話",
+    "WEIGHT": "體重",
+    "HEIGHT": "身高",
+    "LOCAL": "地區"
+  },
+  "ERROR_MESSAGE": {
+    "REQUIRED": "此為必填"
+  }
+}
